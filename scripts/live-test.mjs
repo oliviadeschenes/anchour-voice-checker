@@ -40,11 +40,25 @@ for (const [label, text] of cases) {
       body: JSON.stringify({ text }),
     });
     const raw = await res.text();
-    console.log(`HTTP ${res.status}`);
+    let r;
     try {
-      console.log(JSON.stringify(JSON.parse(raw), null, 2));
+      r = JSON.parse(raw);
     } catch {
+      console.log(`HTTP ${res.status}`);
       console.log(raw.slice(0, 800));
+      console.log();
+      continue;
+    }
+    if (r.error) {
+      console.log(`HTTP ${res.status} — error: ${r.error}`);
+    } else {
+      console.log(`overall ${r.overall_score}/5  ${r.pass ? "PASS ✅" : "FAIL ❌"}`);
+      for (const d of r.dimensions) {
+        console.log(`  ${d.score}  ${d.name}`);
+        console.log(`     ${d.reasoning}`);
+      }
+      console.log("  rewrites:");
+      (r.rewrites ?? []).forEach((x, i) => console.log(`    ${i + 1}. ${x}`));
     }
   } catch (err) {
     console.error(`Request failed: ${err.message}`);
