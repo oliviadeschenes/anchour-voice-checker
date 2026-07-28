@@ -10,6 +10,7 @@
   --accent: #4452f5;
   --accent-hover: #3641d4;
 
+  --ink-85: rgba(18, 18, 19, 0.85);
   --ink-70: rgba(18, 18, 19, 0.7);
   --ink-55: rgba(18, 18, 19, 0.55);
   --ink-40: rgba(18, 18, 19, 0.4);
@@ -88,6 +89,61 @@ body {
   color: var(--ink-70);
   max-width: 32rem;
   margin: 0;
+}
+
+/* --- Application wrapper ---------------------------------------------------- */
+
+.tool-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.4rem;
+}
+
+.section {
+  margin-top: clamp(2.5rem, 6vw, 3.75rem);
+  padding-top: clamp(2rem, 5vw, 2.75rem);
+  border-top: 1px solid var(--ink-10);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-55);
+  margin: 0 0 1.1rem;
+}
+
+.prose > p:not(.section-label),
+.phase p {
+  color: var(--ink-85);
+  font-size: 1.05rem;
+  line-height: 1.62;
+  max-width: 40rem;
+  margin: 0;
+}
+
+.phases {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.phase + .phase {
+  border-top: 1px solid var(--ink-10);
+  padding-top: 1.6rem;
+}
+
+.phase-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
 }
 
 /* --- Input ----------------------------------------------------------------- */
@@ -381,13 +437,21 @@ textarea:focus {
 /* --- Footer ---------------------------------------------------------------- */
 
 .site-footer {
-  margin-top: 3.5rem;
-  padding-top: 1.5rem;
+  margin-top: clamp(2.5rem, 6vw, 3.75rem);
+  padding-top: clamp(2rem, 5vw, 2.75rem);
   border-top: 1px solid var(--ink-10);
 }
 
-.site-footer p {
+.footer-note {
   margin: 0;
+  color: var(--ink-85);
+  font-size: 1.05rem;
+  line-height: 1.62;
+  max-width: 40rem;
+}
+
+.fine {
+  margin: 1.75rem 0 0;
   font-size: 0.82rem;
   color: var(--ink-40);
   max-width: 34rem;

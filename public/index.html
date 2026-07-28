@@ -36,38 +36,98 @@
   </head>
   <body>
     <div class="page">
-      <header class="site-header">
-        <p class="eyebrow">Brand Voice Checker</p>
-        <h1 class="headline">Does it sound like Anchour?</h1>
+      <header class="framing">
+        <h1 class="headline">I didn’t write a cover letter. I built this instead.</h1>
         <p class="lede">
-          Paste any copy — a headline, an email, a social post — and score it
-          against Anchour’s brand voice across six dimensions.
+          This is a working brand voice checker, scored against a rubric built
+          from Anchour’s actual copy — not a mockup, not a slide. Paste something
+          in below and see it work.
         </p>
       </header>
 
       <main>
-        <form id="checker" class="input-card" novalidate>
-          <label class="visually-hidden" for="copy">Copy to check</label>
-          <textarea
-            id="copy"
-            name="copy"
-            rows="6"
-            maxlength="8000"
-            placeholder="Flash in the pan, one-hit wonder — we’re not your marketing agency. We build for sustained growth…"
-            autofocus
-          ></textarea>
-          <div class="input-row">
-            <span class="counter" id="counter" aria-hidden="true">0 / 8000</span>
-            <button type="submit" id="submit" class="btn">Check the voice</button>
-          </div>
-          <p class="error" id="error" role="alert" hidden></p>
-        </form>
+        <section class="tool">
+          <p class="eyebrow">Brand Voice Checker</p>
+          <h2 class="tool-title">Does it sound like Anchour?</h2>
 
-        <section id="results" class="results" aria-live="polite" hidden></section>
+          <form id="checker" class="input-card" novalidate>
+            <label class="visually-hidden" for="copy">Copy to check</label>
+            <textarea
+              id="copy"
+              name="copy"
+              rows="6"
+              maxlength="8000"
+              placeholder="Flash in the pan, one-hit wonder — we’re not your marketing agency. We build for sustained growth…"
+            ></textarea>
+            <div class="input-row">
+              <span class="counter" id="counter" aria-hidden="true">0 / 8000</span>
+              <button type="submit" id="submit" class="btn">Check the voice</button>
+            </div>
+            <p class="error" id="error" role="alert" hidden></p>
+          </form>
+
+          <section id="results" class="results" aria-live="polite" hidden></section>
+        </section>
+
+        <section class="section prose">
+          <p class="section-label">The audit</p>
+          <p>
+            Here’s the friction I’d bet on: voice consistency is one of the first
+            things that slips as an agency scales. At 40+ people across a growing
+            roster of accounts, no single person is reading everything before it
+            ships — and “does this sound like us” becomes a gut check instead of a
+            standard. This tool is a small example of what that standard could
+            look like: fast, specific, and grounded in your real voice instead of
+            generic style-guide advice.
+          </p>
+        </section>
+
+        <section class="section prose">
+          <p class="section-label">The first 90 days</p>
+          <div class="phases">
+            <div class="phase">
+              <p class="phase-label">First 30 days</p>
+              <p>
+                Audit what’s already built across the five existing tools. Sit
+                with copywriting, media intelligence, brand strategy, research,
+                and internal knowledge to find where the real friction lives
+                across BD, client services, creative ops, and the back office.
+                Set a baseline for how client data moves through any of it.
+              </p>
+            </div>
+            <div class="phase">
+              <p class="phase-label">Next 30 days</p>
+              <p>
+                Ship one build-vs-buy decision. Run a working session and write
+                real documentation for one tool, so adoption starts on day one
+                instead of month three. Get one client-facing capability into
+                motion.
+              </p>
+            </div>
+            <div class="phase">
+              <p class="phase-label">Next 30 days</p>
+              <p>
+                Put a measurement framework in place — what’s actually improving
+                quality, speed, or output, and what’s not earning its place. Cut
+                what doesn’t.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer class="site-footer">
-        <p>
+        <p class="section-label">Responsible use</p>
+        <p class="footer-note">
+          This tool is a real example of a data decision, not just a stated
+          policy: it only ever sends the marketing copy someone pastes in — never
+          client-confidential material, never anything proprietary. That’s the
+          standard I’d bring to this role — know exactly what’s touching a model
+          and why, before scale makes that harder to track. Clients are already
+          asking these questions. The answer should be specific, not
+          reassuring-sounding.
+        </p>
+        <p class="fine">
           Six dimensions from Anchour’s voice rubric. A pattern a short line
           can’t exhibit is marked <span class="na-inline">N/A</span>, not
           penalized.
