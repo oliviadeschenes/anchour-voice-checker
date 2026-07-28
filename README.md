@@ -40,6 +40,16 @@ Deploys to Vercel: static frontend from `public/`, serverless function from
 Built incrementally:
 
 1. ✅ Scaffold + serverless function with a verified API connection.
-2. ⬜ Rubric-grounded system prompt + structured JSON scoring.
-3. ⬜ Prompt tuning against on-voice / off-voice / borderline inputs.
-4. ⬜ UI.
+2. ✅ Rubric-grounded system prompt + structured JSON scoring.
+3. ✅ Prompt tuning + a code-enforced N/A gate (short copy that structurally
+   can't exhibit a dimension is marked N/A, not penalized), validated against
+   on-voice / off-voice / borderline inputs.
+4. ✅ UI — restrained single-page tool; brand as accent.
+
+## Design
+
+Brand-as-accent: cream (`#FFF3DF`) + near-black (`#121213`) as the quiet base,
+Anchour's blue (`#4452F5`) reserved for the verdict, meters, and primary action,
+with `#E7E9FF` tinting the PASS state. Fonts name Anchour's licensed faces first
+— Reckless Condensed (display), Saans Semimono (labels) — with self-contained
+fallbacks (Georgia, system mono/sans) so nothing depends on a CDN.
