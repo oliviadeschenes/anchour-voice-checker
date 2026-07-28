@@ -1,0 +1,13 @@
+{
+  "name": "anchour-voice-checker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Brand voice consistency checker for Anchour, grounded in voice-rubric.md.",
+  "scripts": {
+    "test:call": "node scripts/test-call.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0"
+  }
+}
