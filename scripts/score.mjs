@@ -68,10 +68,14 @@ async function main() {
   // Human-readable summary...
   console.log(`\nInput: ${JSON.stringify(text.slice(0, 120))}${text.length > 120 ? "…" : ""}`);
   console.log(
-    `\nOverall: ${result.overall_score}/5   ${result.pass ? "PASS ✅" : "FAIL ❌"}   (model: ${result.model})\n`,
+    `\nOverall: ${result.overall_score}/5   ${result.pass ? "PASS ✅" : "FAIL ❌"}   (avg of ${result.applicable_count} applicable; model: ${result.model})\n`,
   );
   for (const d of result.dimensions) {
-    console.log(`  ${bar(d.score)} ${d.score}  ${d.name}`);
+    if (d.applicable === false) {
+      console.log(`  ${"·".repeat(5)} N/A  ${d.name}`);
+    } else {
+      console.log(`  ${bar(d.score)} ${d.score}  ${d.name}`);
+    }
     console.log(`         ${d.reasoning}\n`);
   }
   console.log("  Rewrites:");

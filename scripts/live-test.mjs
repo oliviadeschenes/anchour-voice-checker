@@ -52,9 +52,12 @@ for (const [label, text] of cases) {
     if (r.error) {
       console.log(`HTTP ${res.status} — error: ${r.error}`);
     } else {
-      console.log(`overall ${r.overall_score}/5  ${r.pass ? "PASS ✅" : "FAIL ❌"}`);
+      console.log(
+        `overall ${r.overall_score}/5  ${r.pass ? "PASS ✅" : "FAIL ❌"}  (avg of ${r.applicable_count} applicable)`,
+      );
       for (const d of r.dimensions) {
-        console.log(`  ${d.score}  ${d.name}`);
+        const s = d.applicable === false ? "N/A" : d.score;
+        console.log(`  ${s}  ${d.name}`);
         console.log(`     ${d.reasoning}`);
       }
       console.log("  rewrites:");
